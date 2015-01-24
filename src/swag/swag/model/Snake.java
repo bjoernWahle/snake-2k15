@@ -15,17 +15,17 @@ public class Snake {
 
     private Position headPosition;
 
-    private Deque<Position> tailPositionList;
-
     private Direction currentMovementDirection;
 
     private boolean consumedGoodie = false;
 
     private World world;
 
+    private Deque<Position> tailPositionList;
+
     public Snake (int length, Position startPosition, Direction startDirection, World world) {
         if(length < 0) {
-            throw new IllegalArgumentException("Lenght has to be at least 1, but is " + length);
+            throw new IllegalArgumentException("Length has to be at least 1, but is " + length);
         }
         this.world = world;
         this.length = length;
@@ -49,6 +49,15 @@ public class Snake {
                     break;
             }
         }
+    }
+
+
+    public Direction getCurrentMovementDirection() {
+        return currentMovementDirection;
+    }
+
+    public void setCurrentMovementDirection(Direction currentMovementDirection) {
+        this.currentMovementDirection = currentMovementDirection;
     }
 
     @Override
