@@ -40,6 +40,12 @@ public class World extends Observable {
         this.generateGoodie();
     }
 
+    public void move() {
+        snake.move();
+        setChanged();
+        notifyObservers();
+    }
+
     public int getSizeY() {
         return sizeY;
     }
@@ -73,6 +79,10 @@ public class World extends Observable {
             newGoodie = new Position(random.nextInt(getSizeX()), random.nextInt(getSizeY()));
         }
         goodiePositionSet.add(newGoodie);
+    }
+
+    public Set getGoodieSet() {
+        return this.goodiePositionSet;
     }
 
     public String toString() {

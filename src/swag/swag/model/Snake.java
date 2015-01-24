@@ -1,13 +1,10 @@
 package swag.swag.model;
 
-import com.sun.javafx.geom.BoxBounds;
 import swag.swag.model.Geometry.Position;
 import swag.swag.model.Geometry.Direction;
 
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by BJOERN on 23.01.2015.
@@ -64,6 +61,12 @@ public class Snake {
         return s;
     }
 
+    public void setCurrentMovementDirection(Direction direction) {
+        if(direction != this.currentMovementDirection) {
+            this.currentMovementDirection = direction;
+        }
+    }
+
     public boolean checkSelfCollision() {
         return tailPositionList.contains(headPosition);
     }
@@ -101,7 +104,7 @@ public class Snake {
                 break;
         }
         if(consumedGoodie) {
-           setConsumedGoodie(false);
+            setConsumedGoodie(false);
         } else {
             this.tailPositionList.removeLast();
         }

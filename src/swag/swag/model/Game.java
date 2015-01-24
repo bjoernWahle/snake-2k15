@@ -9,10 +9,13 @@ import swag.swag.model.Geometry.Position;
 public class Game {
     private World world;
     private GameState gameState;
+    private World startWorld;
 
     public Game(int worldSizeX, int worldSizeY, int snakeStartLength, Position snakeStartPosition, Direction snakeStartDirection) {
         world = new World(worldSizeX, worldSizeY);
         world.setSnake(snakeStartLength, snakeStartPosition, snakeStartDirection);
+        startWorld = new World(worldSizeX, worldSizeY);
+        startWorld.setSnake(snakeStartLength, snakeStartPosition, snakeStartDirection);
         gameState = GameState.NOT_STARTED;
     }
 
@@ -52,7 +55,7 @@ public class Game {
             this.endGame();
         } else {
             world.checkIfGoodieWasComsumed();
-            world.getSnake().move();
+            world.move();
         }
     }
 
