@@ -11,6 +11,9 @@ public class Main {
         game.startGame();
         game.advanceToNextRound();
         game.advanceToNextRound();
+        game.getWorld().getSnake().setCurrentMovementDirection(Direction.DOWN);
+        game.advanceToNextRound();
+        game.advanceToNextRound();
         System.out.println(game.getWorld().getSnake());
         System.out.println(game.getWorld());
     }
