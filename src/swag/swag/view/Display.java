@@ -16,19 +16,22 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by flofincke on 23/01/15.
  */
-public class Display extends JFrame{
+public class Display extends JFrame implements Observer {
 
     private static final long serialVersionUID = 1L;
-    private static final int CONFIGWIDTH = 100, CONFIGHEIGHT = 180;
+    private static final int CONFIGWIDTH = 100, CONFIGHEIGHT = 200;
     private JFrame frame;
     private BlackWhitePlayground playground;
     private JFrame playgroundFrame;
     private int cellSize;
     private JButton startButton, stopButton, resetButton;
+    private JTextField counter;
     private Image stein;
 
     private World world;
@@ -62,7 +65,7 @@ public class Display extends JFrame{
         mainPanel.setLayout(new BorderLayout());
 
 
-        // The button panel in South Panel
+        // The button panel
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
 
@@ -81,9 +84,15 @@ public class Display extends JFrame{
         resetButton.addActionListener(new ResetListener());
         resetButton.setEnabled(false);
 
+        counter = new JTextField();
+        counter.setPreferredSize(new Dimension(90, 30));
+        counter.setEditable(false);
+        counter.setText("COUNTER");
+
         buttonPanel.add(startButton);
         buttonPanel.add(stopButton);
         buttonPanel.add(resetButton);
+        buttonPanel.add(counter);
         mainPanel.add(buttonPanel, BorderLayout.CENTER);
 
         frame.add(mainPanel);
@@ -142,6 +151,11 @@ public class Display extends JFrame{
 
     public JButton getResetButton() {
         return resetButton;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        counter.setText(String.valueOf(this.world.getSnake().getTailList().size()+1));
     }
 
     //Menu-Listener
