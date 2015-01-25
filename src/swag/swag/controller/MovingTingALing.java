@@ -26,10 +26,10 @@ public class MovingTingALing implements KeyListener {
         switch(e.getExtendedKeyCode())
         {
             case KeyEvent.VK_UP:
-                lord.getGame().getWorld().getSnake().setCurrentMovementDirection(Direction.DOWN);
+                lord.getGame().getWorld().getSnake().setCurrentMovementDirection(Direction.TOP);
                 break;
             case KeyEvent.VK_DOWN:
-                lord.getGame().getWorld().getSnake().setCurrentMovementDirection(Direction.TOP);
+                lord.getGame().getWorld().getSnake().setCurrentMovementDirection(Direction.DOWN);
                 break;
             case KeyEvent.VK_RIGHT:
                 lord.getGame().getWorld().getSnake().setCurrentMovementDirection(Direction.RIGHT);

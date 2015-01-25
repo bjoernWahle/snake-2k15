@@ -29,6 +29,7 @@ public class LordOfSwagaliciousness {
         tikTok.start();
         nokia.getStartButton().setEnabled(false);
         nokia.getStopButton().setEnabled(true);
+        this.nokia.getStartButton().setEnabled(false);
 
     }
 
@@ -67,7 +68,7 @@ public class LordOfSwagaliciousness {
             while(!paused) {
                     lord.makeStep();
                     try {
-                        sleep(500);
+                        sleep(300);
                     } catch (InterruptedException e) {
                     }
             }
