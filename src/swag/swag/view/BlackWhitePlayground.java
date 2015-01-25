@@ -39,7 +39,7 @@ public class BlackWhitePlayground extends JComponent implements Observer {
         //Image: 280x200
         //x= 105 y = 278
 
-        /*g2d.fillRect(offsetX, offsetY, cellSize * worldDim.width, cellSize * worldDim.height);
+        /*g2d.fillRect(offsetX, offsetY, cellSize * world.getSizeX(), cellSize * world.getSizeY());
         g2d.setColor(Color.gray);
         int i;
         for (i = 1; i < worldDim.width; i++) {
