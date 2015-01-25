@@ -70,12 +70,6 @@ public class Snake {
         return s;
     }
 
-    public void setCurrentMovementDirection(Direction direction) {
-        if(direction != this.currentMovementDirection) {
-            this.currentMovementDirection = direction;
-        }
-    }
-
     public boolean checkSelfCollision() {
         return tailPositionList.contains(headPosition);
     }
