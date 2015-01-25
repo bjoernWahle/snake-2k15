@@ -18,6 +18,7 @@ public class LordOfSwagaliciousness {
         this.game = game;
         this.nokia = new Display(game.getWorld(), this);
         this.game.getWorld().addObserver(this.nokia.getPlayground());
+        this.game.getWorld().addObserver(this.nokia);
         this.nokia.getPlayground().addKeyListener(new MovingTingALing(this));
         this.nokia.getPlayground().setFocusable(true);
     }
@@ -68,7 +69,7 @@ public class LordOfSwagaliciousness {
             while(!paused) {
                     lord.makeStep();
                     try {
-                        sleep(300);
+                        sleep(100);
                     } catch (InterruptedException e) {
                     }
             }
