@@ -56,6 +56,10 @@ public class Snake {
         return currentMovementDirection;
     }
 
+    public void setCurrentMovementDirection(Direction currentMovementDirection) {
+        this.currentMovementDirection = currentMovementDirection;
+    }
+
     @Override
     public String toString() {
         String s =  "{Snake: {Head: ("+headPosition.getX() +"," +headPosition.getY() +"), Tail: [";
@@ -91,7 +95,7 @@ public class Snake {
         switch (currentMovementDirection) {
             case TOP:
                 this.headPosition = new Position(headPosition.getX(), (headPosition.getY() - 1));
-                if(this.headPosition.getY() == 0) {
+                if(this.headPosition.getY()  == -1) {
                     this.headPosition = new Position(headPosition.getX(), world.getSizeY() - 1);
                 }
                 break;
@@ -100,7 +104,7 @@ public class Snake {
                 break;
             case LEFT:
                 this.headPosition = new Position((headPosition.getX() -1) % world.getSizeX(), headPosition.getY());
-                if(this.headPosition.getX() == 0) {
+                if(this.headPosition.getX() == -1) {
                     this.headPosition = new Position(world.getSizeX()  - 1, headPosition.getY());
                 }
                 break;

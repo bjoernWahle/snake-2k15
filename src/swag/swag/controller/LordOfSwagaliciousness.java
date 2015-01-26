@@ -1,6 +1,7 @@
 package swag.swag.controller;
 
 import swag.swag.model.Game;
+import swag.swag.model.GameState;
 import swag.swag.model.World;
 import swag.swag.view.Display;
 
@@ -66,7 +67,7 @@ public class LordOfSwagaliciousness {
         }
 
         public void run() {
-            while(!paused) {
+            while(!paused && lord.getGame().getGameState() == GameState.RUNNING) {
                     lord.makeStep();
                     try {
                         sleep(100);

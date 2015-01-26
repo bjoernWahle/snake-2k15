@@ -38,6 +38,11 @@ public class World extends Observable {
 
         this.goodiePositionSet = new HashSet<Position>();
         this.generateGoodie();
+        this.generateGoodie();
+        this.generateGoodie();
+        this.generateGoodie();
+        this.generateGoodie();
+        this.generateGoodie();
     }
 
     public void move() {
@@ -71,6 +76,10 @@ public class World extends Observable {
             // generate new goodie
             this.generateGoodie();
         }
+    }
+
+    private void generateGoodieAt(Position position) {
+        goodiePositionSet.add(position);
     }
 
     public void generateGoodie() {

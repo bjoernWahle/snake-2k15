@@ -23,8 +23,8 @@ public class BlackWhitePlayground extends JComponent implements Observer {
     public BlackWhitePlayground(int cellSize, World world) {
         this.cellSize = cellSize;
         this.world = world;
-        this.offsetX = (280 / 2 - (world.getSizeX() * cellSize / 2)) + 100;
-        this.offsetY = (200 / 2 - (world.getSizeY() * cellSize / 2)) + 278;
+        this.offsetX = (280 / 2 - (world.getSizeX() * cellSize / 2)) + 102;
+        this.offsetY = (200 / 2 - (world.getSizeY() * cellSize / 2)) + 280;
     }
 
     public void setCellSize(int cellSize) {

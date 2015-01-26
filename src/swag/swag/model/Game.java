@@ -63,4 +63,8 @@ public class Game {
         // if snake is colliding with itself, game should be ended
         return world.getSnake().checkSelfCollision();
     }
+
+    public GameState getGameState() {
+        return gameState;
+    }
 }
