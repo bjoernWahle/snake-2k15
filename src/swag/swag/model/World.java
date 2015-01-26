@@ -38,11 +38,6 @@ public class World extends Observable {
 
         this.goodiePositionSet = new HashSet<Position>();
         this.generateGoodie();
-        this.generateGoodie();
-        this.generateGoodie();
-        this.generateGoodie();
-        this.generateGoodie();
-        this.generateGoodie();
     }
 
     public void move() {
@@ -73,8 +68,11 @@ public class World extends Observable {
             // remove goodie
             goodiePositionSet.remove(snake.getHeadPosition());
 
-            // generate new goodie
-            this.generateGoodie();
+            int goodiesCount = 1;
+            goodiesCount = Math.round(this.snake.getTailList().size()/10)+1;
+            for(int i = this.goodiePositionSet.size(); i<goodiesCount; i++) {
+                this.generateGoodie();
+            }
         }
     }
 

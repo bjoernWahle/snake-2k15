@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void startGame() {
-        Game game = new Game(47, 32, 100, new Position(30, 5), Direction.RIGHT);
+        Game game = new Game(47, 32, 20, new Position(30, 5), Direction.RIGHT);
         LordOfSwagaliciousness lord = new LordOfSwagaliciousness(game);
     }
 }
